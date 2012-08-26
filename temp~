@@ -1,0 +1,177 @@
+ 
+#include "Float.h"
+#include "Fraction.h"
+#include "Vector.h"
+#include "FloatCalculator.h"
+#include "FractionCalculator.h"
+#include "VectorCalculator.h"
+
+int main(void)
+{
+	Float f1, f2, f3;
+	Fraction r1, r2, r3;
+	Vector v1, v2, v3;
+	FloatCalculator fc;
+	FractionCalculator rc;
+	VectorCalculator vc;
+	string str;
+	char ch;
+
+	cout << "Float" << endl;
+	cout << f1.get() << endl;
+	f1.set(1.0);
+	f2.set(2.0);
+	cout << f1.get() << endl;
+	f3 = f1 + f2;
+	cout << f3.get() << endl;
+	f3 = f1 - f2;
+	cout << f3.get() << endl;
+	f3 = f1 * f2;
+	cout << f3.get() << endl;
+	f3 = f1 / f2;
+	cout << f3.get() << endl;
+
+	cout << "Fraction" << endl;
+	cout << r1.getNum() << endl;
+	cout << r1.getDenom() << endl;
+	r1.set(4, 5);
+	r2.set(6, 7);
+	cout << r1.getNum() << endl;
+	cout << r1.getDenom() << endl;
+	r3 = r1 + r2;
+	cout << r3.getNum() << ":" << r3.getDenom() << endl;
+	r3 = r1 - r2;
+	cout << r3.getNum() << ":" << r3.getDenom() << endl;
+	r3 = r1 * r2;
+	cout << r3.getNum() << ":" << r3.getDenom() << endl;
+	r3 = r1 / r2;
+	cout << r3.getNum() << ":" << r3.getDenom() << endl;
+
+	cout << "Vector" << endl;
+	cout << v1.getX() << endl;
+	cout << v1.getY() << endl;
+	cout << v1.getZ() << endl;
+	v1.set(1.0, 2.0, 3.0);
+	v2.set(4.0, 5.0, 6.0);
+	cout << v1.getX() << endl;
+	cout << v1.getY() << endl;
+	cout << v1.getZ() << endl << endl;
+
+	v3 = v1 + v2;
+	cout << v3.getX() << endl;
+	cout << v3.getY() << endl;
+	cout << v3.getZ() << endl << endl;
+
+	v3 = v1 - v2;
+	cout << v3.getX() << endl;
+	cout << v3.getY() << endl;
+	cout << v3.getZ() << endl << endl;
+
+	cout << v1 * v2 << endl << endl;
+
+	v3 = v1 / v2;
+	cout << v3.getX() << endl;
+	cout << v3.getY() << endl;
+	cout << v3.getZ() << endl << endl;
+
+	cout << "Float Calculator" << endl;
+	ch = '+';
+	fc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	fc.setOperation(ch);
+	fc.setOperands(f1, f2);
+	fc.compute();
+	fc.print();
+
+	ch = '-';
+	fc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	fc.setOperation(ch);
+	fc.setOperands(f1, f2);
+	fc.compute();
+	fc.print();
+
+	ch = '*';
+	fc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	fc.setOperation(ch);
+	fc.setOperands(f1, f2);
+	fc.compute();
+	fc.print();
+
+	ch = '/';
+	fc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	fc.setOperation(ch);
+	fc.setOperands(f1, f2);
+	fc.compute();
+	fc.print();
+
+	cout << "Fraction Calculator" << endl;
+	ch = '+';
+	rc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	rc.setOperation(ch);
+	rc.setOperands(r1, r2);
+	rc.compute();
+	rc.print();
+
+	ch = '-';
+	rc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	rc.setOperation(ch);
+	rc.setOperands(r1, r2);
+	rc.compute();
+	rc.print();
+
+	ch = '*';
+	rc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	rc.setOperation(ch);
+	rc.setOperands(r1, r2);
+	rc.compute();
+	rc.print();
+
+	ch = '/';
+	rc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	rc.setOperation(ch);
+	rc.setOperands(r1, r2);
+	rc.compute();
+	rc.print();
+
+	cout << "Vector Calculator" << endl;
+	ch = '+';
+	vc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	vc.setOperation(ch);
+	vc.setOperands(v1, v2);
+	vc.compute();
+	vc.print();
+
+	ch = '-';
+	vc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	vc.setOperation(ch);
+	vc.setOperands(v1, v2);
+	vc.compute();
+	vc.print();
+
+	ch = '*';
+	vc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	vc.setOperation(ch);
+	vc.setOperands(v1, v2);
+	vc.compute();
+	vc.print();
+
+	ch = '/';
+	vc.operatorDescriptions(ch, str);
+	cout << ch << ": " << str << endl;
+	vc.setOperation(ch);
+	vc.setOperands(v1, v2);
+	vc.compute();
+	vc.print();
+
+	return 0;
+}
